@@ -1,0 +1,43 @@
+{
+    "id": "H-20260330005921-ae7bb92a",
+    "target": "Protéine SLC6A14 (Solute Carrier Family 6 Member 14)",
+    "domain": "oncologie (cancer du pancréas métastatique et glioblastome)",
+    "title": "L'inhibition spécifique de SLC6A14 dans les xénogreffes de cancer pancréatique et de glioblastome réduirait la disponibilité intracellulaire en glutamine et arginine, limitant ainsi la synthèse protéique tumorale et la prolifération cellulaire via un mécanisme dépendant de l'activation de GCN2 (General Control Nonderepressible 2) et de l'inhibition de mTORC1, sans affecter significativement les cellules saines à faible expression de SLC6A14.",
+    "hypothesis": "L'inhibition spécifique de SLC6A14 dans les xénogreffes de cancer pancréatique et de glioblastome réduirait la disponibilité intracellulaire en glutamine et arginine, limitant ainsi la synthèse protéique tumorale et la prolifération cellulaire via un mécanisme dépendant de l'activation de GCN2 (General Control Nonderepressible 2) et de l'inhibition de mTORC1, sans affecter significativement les cellules saines à faible expression de SLC6A14.",
+    "vulgarized": "Les cellules cancéreuses ont besoin de beaucoup de nutriments pour grandir, comme des acides aminés comme la glutamine et l'arginine. SLC6A14 est une protéine qui transporte ces nutriments à l'intérieur des cellules cancéreuses. En bloquant cette protéine avec un médicament, on pourrait affamer les cellules tumorales et ralentir leur croissance, tout en épargnant les cellules saines qui en ont moins besoin.",
+    "mechanism": "L'inhibition de SLC6A14 diminue l'apport en glutamine\/arginine, provoquant un stress métabolique qui active GCN2 (via l'accumulation de tRNA non chargés), inhibant mTORC1 et bloquant la traduction protéique dépendante de 4E-BP1\/S6K1. Dans les cellules tumorales à haut niveau d'expression de SLC6A14, cela induit une autophagie compensatoire (via ULK1) et une apoptose (via CHOP).",
+    "novelty": 0.85,
+    "confidence": 0.75,
+    "validation_score": 0.75,
+    "actionable": "Tester l'inhibiteur sélectif de SLC6A14 (ex. α-Méthyl-DL-tryptophane) sur des xénogreffes pancréatiques (PANC-1) et de glioblastome (U87MG) en combinaison avec un inhibiteur de GCN2 (ex. A-92) pour évaluer la synergie thérapeutique.",
+    "therapeutic_target": "SLC6A14 (avec validation de GCN2 comme biomarqueur de réponse au traitement)",
+    "evidence_strength": "moderate",
+    "research_gaps": "Manque de données sur l'expression différentielle de SLC6A14 entre tissus tumoraux et sains, absence de corrélation entre son niveau d'expression et la survie des patients, et peu d'études sur l'impact de son inhibition sur le microenvironnement tumoral (ex. immunité, angiogenèse).",
+    "keywords": [
+        "SLC6A14",
+        "amino acid transport",
+        "cancer metabolism",
+        "GCN2-mTOR axis",
+        "xenograft models"
+    ],
+    "sources": [
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 2,
+    "status": "ARCHIVEE",
+    "timestamp": 1774832361,
+    "saved_at": 1774832361,
+    "version": "9.1-neuron-fixed",
+    "session": "26f2eef19d895b3b",
+    "data_snapshot": {
+        "5": {
+            "source": "OpenAlex",
+            "count": 15
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 7277
+        }
+    }
+}

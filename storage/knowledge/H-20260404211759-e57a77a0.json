@@ -1,0 +1,51 @@
+{
+    "id": "H-20260404211759-e57a77a0",
+    "target": "Protéine TMEM161B (Transmembrane Protein 161B)",
+    "domain": "Neurodégénérescence et épilepsie rare",
+    "title": "La protéine TMEM161B pourrait réguler le trafic vésiculaire des transporteurs du GABA (comme GAT-1) via une interaction directe avec les protéines SynGAP et Synaptic Vesicle Glycoprotein 2A (SV2A), créant un mécanisme compensatoire défaillant dans les épilepsies réfractaires en perturbant l'équilibre excitation\/inhibition dans les synapses GABAergiques.",
+    "hypothesis": "La protéine TMEM161B pourrait réguler le trafic vésiculaire des transporteurs du GABA (comme GAT-1) via une interaction directe avec les protéines SynGAP et Synaptic Vesicle Glycoprotein 2A (SV2A), créant un mécanisme compensatoire défaillant dans les épilepsies réfractaires en perturbant l'équilibre excitation\/inhibition dans les synapses GABAergiques.",
+    "vulgarized": "Imagine que dans ton cerveau, des petits camions (vésicules) transportent un messager calmant (GABA) pour éviter les crises d'épilepsie. TMEM161B serait comme un chef d'orchestre qui coordonne ces camions, mais si ce chef dysfonctionne, les camions se perdent et les crises surviennent. Dans l'épilepsie réfractaire, ce système de secours ne fonctionne plus.",
+    "mechanism": "TMEM161B interagirait avec SynGAP (régulateur des voies de signalisation Ras\/Rap) et SV2A (impliqué dans la libération des neurotransmetteurs) pour moduler le recyclage des transporteurs GAT-1 à la membrane synaptique. Une mutation ou une expression anormale de TMEM161B perturberait ce complexe, réduisant l'efficacité de la recapture du GABA et favorisant l'hyperexcitabilité neuronale. Le sommeil à ondes lentes (lié aux données EEG) pourrait aggraver ce déséquilibre en modifiant l'expression de TMEM161B via des mécanismes épigénétiques ou hormonaux.",
+    "novelty": 0.85,
+    "confidence": 0.7,
+    "validation_score": 0.7,
+    "actionable": "Tester l'interaction TMEM161B-SV2A\/SynGAP par co-immunoprécipitation dans des échantillons de cortex temporal de patients épileptiques réfractaires versus contrôles. Valider l'effet de modulateurs de SynGAP (ex. inhibiteurs de Ras) sur la recapture du GABA dans des neurones dérivés de cellules souches de ces patients.",
+    "therapeutic_target": "Complexe TMEM161B-SynGAP-SV2A ou le transporteur GAT-1",
+    "evidence_strength": "moderate",
+    "research_gaps": "Aucune étude n'a exploré le lien entre TMEM161B et le trafic vésiculaire GABAergique. Les données sur SV2A et SynGAP sont limitées au contexte des gliomes ou de l'épilepsie sans focus sur TMEM161B. Les mécanismes de régulation de TMEM161B par le sommeil ou les hormones restent inconnus.",
+    "keywords": [
+        "TMEM161B",
+        "trafic vésiculaire GABAergique",
+        "SynGAP",
+        "SV2A",
+        "épilepsie réfractaire",
+        "GAT-1",
+        "sommeil à ondes lentes",
+        "mécanisme compensatoire"
+    ],
+    "sources": [
+        "ArXiv",
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 3,
+    "status": "ARCHIVEE",
+    "timestamp": 1775337479,
+    "saved_at": 1775337479,
+    "version": "9.1-neuron-fixed",
+    "session": "522ca80f086b9d40",
+    "data_snapshot": {
+        "3": {
+            "source": "ArXiv",
+            "count": 5
+        },
+        "5": {
+            "source": "OpenAlex",
+            "count": 3
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 34
+        }
+    }
+}

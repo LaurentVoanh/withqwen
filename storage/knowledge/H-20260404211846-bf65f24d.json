@@ -1,0 +1,53 @@
+{
+    "id": "H-20260404211846-bf65f24d",
+    "target": "Protéine LRRK2 (Leucine-Rich Repeat Kinase 2) – Variante G2019S dans la maladie de Gaucher",
+    "domain": "Neurodégénérescence et maladies lysosomales",
+    "title": "La dysfonction lysosomale dans la maladie de Gaucher (déficit en glucocérébrosidase) induit une accumulation de substrats lipidiques (glucosylcéramide, glucosylsphingosine) qui potentialisent l'activité kinase hyperactive de LRRK2-G2019S via une inhibition compétitive de la déphosphorylation de LRRK2 par les phosphatases lysosomales PP2A, aggravant ainsi la neuroinflammation et l'autophagie défectueuse.",
+    "hypothesis": "La dysfonction lysosomale dans la maladie de Gaucher (déficit en glucocérébrosidase) induit une accumulation de substrats lipidiques (glucosylcéramide, glucosylsphingosine) qui potentialisent l'activité kinase hyperactive de LRRK2-G2019S via une inhibition compétitive de la déphosphorylation de LRRK2 par les phosphatases lysosomales PP2A, aggravant ainsi la neuroinflammation et l'autophagie défectueuse.",
+    "vulgarized": "Dans la maladie de Gaucher, les cellules manquent d'une enzyme qui nettoie les graisses. Ces graisses en excès bloquent une autre protéine, LRRK2, qui devient trop active et perturbe le recyclage des déchets cellulaires. Cela aggrave les problèmes de cerveau et d'inflammation, comme dans Parkinson.",
+    "mechanism": "L'accumulation de glucosylcéramide dans les lysosomes inhibe la phosphatase PP2A (via interaction avec ses sous-unités régulatrices B55α ou B56γ), réduisant la déphosphorylation de LRRK2-G2019S sur sa boucle d'activation (Ser935\/Ser955). Cela prolonge la phosphorylation de Rab10 et Rab29, perturbant le trafic vésiculaire lysosomal et l'autophagie, tout en activant les voies NLRP3 et NF-κB.",
+    "novelty": 0.85,
+    "confidence": 0.75,
+    "validation_score": 0.75,
+    "actionable": "Tester in vitro l'effet de l'inhibition pharmacologique de LRRK2 (ex. MLi-2) ou de la supplémentation en glucocérébrosidase recombinante (imiglucérase) sur la phosphorylation de PP2A et la dégradation autophagique dans des fibroblastes de patients Gaucher porteurs de LRRK2-G2019S.",
+    "therapeutic_target": "Complexe PP2A (sous-unité régulatrice B55α\/B56γ) ou interaction glucosylcéramide-PP2A",
+    "evidence_strength": "moderate",
+    "research_gaps": "Aucune étude n'a directement évalué l'impact du glucosylcéramide sur la régulation de LRRK2 via PP2A. Les données sur l'interaction lipidique-phosphatase dans les maladies lysosomales sont limitées aux sphingolipidoses (ex. Niemann-Pick) mais jamais spécifiquement pour LRRK2.",
+    "keywords": [
+        "LRRK2-G2019S",
+        "maladie de Gaucher",
+        "glucosylcéramide",
+        "PP2A",
+        "autophagie lysosomale",
+        "neuroinflammation",
+        "phosphatase",
+        "Rab GTPases",
+        "imiglucérase",
+        "NLRP3"
+    ],
+    "sources": [
+        "ArXiv",
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 3,
+    "status": "ARCHIVEE",
+    "timestamp": 1775337526,
+    "saved_at": 1775337526,
+    "version": "9.1-neuron-fixed",
+    "session": "522ca80f086b9d40",
+    "data_snapshot": {
+        "3": {
+            "source": "ArXiv",
+            "count": 2
+        },
+        "5": {
+            "source": "OpenAlex",
+            "count": 1507
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 9045
+        }
+    }
+}

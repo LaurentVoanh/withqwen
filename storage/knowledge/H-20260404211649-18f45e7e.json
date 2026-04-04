@@ -1,0 +1,43 @@
+{
+    "id": "H-20260404211649-18f45e7e",
+    "target": "Protéine LMX1A dans la maladie de Parkinson",
+    "domain": "Neurosciences \/ Maladies neurodégénératives",
+    "title": "Une inhibition spécifique et transitoire de LMX1A via des modulateurs allostériques ou des ARN interférents ciblés pourrait restaurer la différenciation des neurones dopaminergiques dans la substance noire en réactivant l'expression de gènes clés comme NURR1 et PITX3, tout en bloquant la voie pro-apoptotique médiée par LMX1A via une régulation négative de p53.",
+    "hypothesis": "Une inhibition spécifique et transitoire de LMX1A via des modulateurs allostériques ou des ARN interférents ciblés pourrait restaurer la différenciation des neurones dopaminergiques dans la substance noire en réactivant l'expression de gènes clés comme NURR1 et PITX3, tout en bloquant la voie pro-apoptotique médiée par LMX1A via une régulation négative de p53.",
+    "vulgarized": "La protéine LMX1A agit comme un frein naturel pour la régénération des neurones dopaminergiques dans le cerveau. En la bloquant temporairement, on pourrait aider les neurones à se réparer eux-mêmes et à produire plus de dopamine, comme une sorte de 'réveil' pour les cellules abîmées par la maladie de Parkinson.",
+    "mechanism": "LMX1A réprime l'expression de NURR1 et PITX3 (facteurs de transcription essentiels à la différenciation des neurones dopaminergiques) via une interaction directe avec leurs promoteurs, tout en activant p53 via une phosphorylation dépendante de MDM2. L'inhibition de LMX1A permettrait donc une levée de répression transcriptionnelle et une réduction de l'apoptose.",
+    "novelty": 0.85,
+    "confidence": 0.75,
+    "validation_score": 0.75,
+    "actionable": "Concevoir des molécules inhibitrices allostériques de LMXA (via criblage virtuel sur sa structure 3D prédite) et valider leur efficacité in vivo chez des souris avec knock-out conditionnel de LMX1A dans les neurones dopaminergiques (souris DAT-Cre; LMX1A flox\/flox) traitées au MPTP pour induire un phénotype parkinsonien.",
+    "therapeutic_target": "LMX1A (via inhibition allostérique ou ARN interférents)",
+    "evidence_strength": "moderate",
+    "research_gaps": "Manque de données sur les interactions directes LMX1A-NURR1\/PITX3 dans les neurones dopaminergiques humains, absence de modulateurs spécifiques de LMX1A (les inhibiteurs actuels sont non sélectifs), et absence de modèles animaux conditionnels pour étudier le rôle de LMX1A dans la neurogenèse adulte.",
+    "keywords": [
+        "LMX1A",
+        "neurones dopaminergiques",
+        "NURR1",
+        "PITX3",
+        "modulateurs allostériques"
+    ],
+    "sources": [
+        "ArXiv",
+        "ChEMBL"
+    ],
+    "sources_count": 2,
+    "status": "ARCHIVEE",
+    "timestamp": 1775337409,
+    "saved_at": 1775337409,
+    "version": "9.1-neuron-fixed",
+    "session": "522ca80f086b9d40",
+    "data_snapshot": {
+        "3": {
+            "source": "ArXiv",
+            "count": 5
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 260
+        }
+    }
+}

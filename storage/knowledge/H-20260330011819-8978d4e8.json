@@ -1,0 +1,53 @@
+{
+    "id": "H-20260330011819-8978d4e8",
+    "target": "Protéine KCNJ16 (Potassium Inwardly-Rectifying Channel Subfamily J Member 16)",
+    "domain": "Génétique rare et canaux ioniques",
+    "title": "Les variants rares de KCNJ16, en réduisant son hétéromérisation avec KCNJ10 dans les astrocytes, pourraient altérer l'homéostasie potassique extracellulaire et favoriser l'hyperexcitabilité neuronale dans les épilepsies réfractaires, via un mécanisme de 'fuite potassique' astrocytaire et une perturbation du couplage neurovasculaire.",
+    "hypothesis": "Les variants rares de KCNJ16, en réduisant son hétéromérisation avec KCNJ10 dans les astrocytes, pourraient altérer l'homéostasie potassique extracellulaire et favoriser l'hyperexcitabilité neuronale dans les épilepsies réfractaires, via un mécanisme de 'fuite potassique' astrocytaire et une perturbation du couplage neurovasculaire.",
+    "vulgarized": "Imagine que les astrocytes sont comme des éboueurs qui nettoient l'excès de potassium dans le cerveau. Si la protéine KCNJ16 est défectueuse, ces éboueurs ne font plus correctement leur travail. Le potassium s'accumule alors autour des neurones, qui deviennent trop excités et provoquent des crises d'épilepsie. C'est comme si la ville manquait de camions-poubelles !",
+    "mechanism": "Les variants de KCNJ16 réduisent sa capacité à former des hétéromères fonctionnels avec KCNJ10 (Kir4.1) dans les astrocytes, diminuant ainsi le recyclage du potassium extracellulaire. Cette accumulation de K+ extracellulaire perturbe le potentiel de membrane des neurones adjacents (via une dépolarisation chronique) et altère le couplage neurovasculaire (via une vasoconstriction inadaptée), favorisant l'hyperexcitabilité neuronale et les crises épileptiques. De plus, l'hypofonction de KCNJ16 pourrait induire une acidose intracellulaire astrocytaire (via l'accumulation de H+ due à un échangeur Na+\/H+ déséquilibré), exacerbant la dysfonction du canal.",
+    "novelty": 0.85,
+    "confidence": 0.75,
+    "validation_score": 0.75,
+    "actionable": "Tester l'impact des variants de KCNJ16 sur la formation d'hétéromères KCNJ10\/KCNJ16 dans des astrocytes dérivés de cellules souches pluripotentes (iPSC) de patients épileptiques réfractaires, en utilisant des techniques de co-immunoprécipitation et de patch-clamp. Valider in vivo chez des souris knock-in pour un variant humain de KCNJ16 (ex: p.R65C) avec électrocorticographie (ECoG) et imagerie cérébrale fonctionnelle.",
+    "therapeutic_target": "Complexe hétéromérique KCNJ10\/KCNJ16 dans les astrocytes, avec un focus sur la restauration de l'hétéromérisation fonctionnelle ou la compensation pharmacologique de la fuite potassique (ex: agonistes des canaux KCNJ ou modulateurs de l'acidose intracellulaire).",
+    "evidence_strength": "moderate",
+    "research_gaps": "1) Absence d'études directes liant les variants de KCNJ16 aux épilepsies réfractaires (les données actuelles concernent surtout des phénotypes rénaux ou des modèles animaux). 2) Manque de caractérisation fonctionnelle des hétéromères KCNJ10\/KCNJ16 dans le cerveau humain. 3) Rôle de l'acidose intracellulaire astrocytaire dans la pathogenèse épileptique via KCNJ16 non exploré. 4) Absence de modèles animaux avec des variants humains de KCNJ16 spécifiques aux épilepsies.",
+    "keywords": [
+        "KCNJ16",
+        "astrocytes",
+        "épilepsie réfractaire",
+        "hétéromérisation KCNJ10\/KCNJ16",
+        "homéostasie potassique",
+        "canaux Kir",
+        "neurovascular coupling",
+        "acidose intracellulaire",
+        "EAST syndrome",
+        "modèles animaux iPSC"
+    ],
+    "sources": [
+        "PubMed",
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 3,
+    "status": "ARCHIVEE",
+    "timestamp": 1774833499,
+    "saved_at": 1774833499,
+    "version": "9.1-neuron-fixed",
+    "session": "26f2eef19d895b3b",
+    "data_snapshot": {
+        "0": {
+            "source": "PubMed",
+            "count": 5
+        },
+        "5": {
+            "source": "OpenAlex",
+            "count": 37
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 20
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "id": "H-20260404215600-6db440b9",
+    "target": "P2RY14 (P2Y Purinoceptor 14)",
+    "domain": "immunologie",
+    "title": "L'activation du récepteur P2RY14 par l'UTP ou l'ATP dans les macrophages induit une polarisation préférentielle vers un phénotype M2 via l'activation de la voie PI3K\/AKT\/mTOR et l'inhibition de NF-κB, médiée par une régulation négative de TLR4, offrant une cible pour moduler l'inflammation chronique sans immunosuppression globale.",
+    "hypothesis": "L'activation du récepteur P2RY14 par l'UTP ou l'ATP dans les macrophages induit une polarisation préférentielle vers un phénotype M2 via l'activation de la voie PI3K\/AKT\/mTOR et l'inhibition de NF-κB, médiée par une régulation négative de TLR4, offrant une cible pour moduler l'inflammation chronique sans immunosuppression globale.",
+    "vulgarized": "Imagine que les macrophages sont comme des soldats qui peuvent soit attaquer les intrus (M1) soit réparer les tissus (M2). Ici, on pense que P2RY14 agit comme un interrupteur qui pousse ces cellules à devenir des 'réparateurs' plutôt que des 'combattants'. Cela pourrait aider à calmer les inflammations sans affaiblir tout le système immunitaire.",
+    "mechanism": "Le récepteur P2RY14, couplé à une protéine G inhibitrice (Gi), active la voie PI3K\/AKT\/mTOR tout en inhibant NF-κB via une régulation négative de TLR4. Cette cascade favorise l'expression de gènes associés au phénotype M2 (ex. IL-10, Arg1) et réprime ceux du phénotype M1 (ex. TNF-α, IL-6). L'UTP extracellulaire, libéré lors de dommages tissulaires, agirait comme un signal endogène pour ce mécanisme.",
+    "novelty": 0.85,
+    "confidence": 0.72,
+    "validation_score": 0.72,
+    "actionable": "Tester l'effet de modulateurs spécifiques de P2RY14 (agonistes comme l'UTP ou antagonistes) sur la polarisation des macrophages in vitro (macrophages dérivés de monocytes humains) en utilisant des marqueurs M1\/M2 (CD86\/CD206) et des dosages cytokiniques (ELISA).",
+    "therapeutic_target": "P2RY14 (P2Y Purinoceptor 14) avec une modulation sélective pour favoriser la polarisation M2 sans immunosuppression globale.",
+    "evidence_strength": "moderate",
+    "research_gaps": "Aucune étude ne lie directement P2RY14 à la polarisation des macrophages M1\/M2. Les données sur P2RY14 dans l'immunité sont limitées à son rôle dans les cellules dendritiques et les neutrophiles. Les mécanismes moléculaires précis (ex. interaction avec TLR4) restent inconnus.",
+    "keywords": [
+        "P2RY14",
+        "polarisation des macrophages",
+        "M1\/M2",
+        "inflammation chronique",
+        "GPCR",
+        "PI3K\/AKT\/mTOR",
+        "NF-κB",
+        "TLR4"
+    ],
+    "sources": [
+        "ArXiv",
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 3,
+    "status": "ARCHIVEE",
+    "timestamp": 1775339760,
+    "saved_at": 1775339760,
+    "version": "9.1-neuron-fixed",
+    "session": "522ca80f086b9d40",
+    "data_snapshot": {
+        "3": {
+            "source": "ArXiv",
+            "count": 5
+        },
+        "5": {
+            "source": "OpenAlex",
+            "count": 82
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 9365
+        }
+    }
+}

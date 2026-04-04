@@ -1,0 +1,53 @@
+{
+    "id": "H-20260330005625-597cca39",
+    "target": "Protéine TMEM175 (Transmembrane Protein 175)",
+    "domain": "Neurodégénérescence et Maladie de Parkinson",
+    "title": "Les variants rares fonctionnels de TMEM175, en altérant son activité de canal protonique lysosomal, perturbent l'acidification des lysosomes, ce qui aggrave l'autophagie défectueuse et favorise l'agrégation de l'alpha-synucléine via une accumulation de substrats non dégradés et une dysfonction mitochondriale secondaire dans les neurones dopaminergiques.",
+    "hypothesis": "Les variants rares fonctionnels de TMEM175, en altérant son activité de canal protonique lysosomal, perturbent l'acidification des lysosomes, ce qui aggrave l'autophagie défectueuse et favorise l'agrégation de l'alpha-synucléine via une accumulation de substrats non dégradés et une dysfonction mitochondriale secondaire dans les neurones dopaminergiques.",
+    "vulgarized": "Imagine que les lysosomes, des 'poubelles' de la cellule, ne fonctionnent plus correctement à cause d'un défaut génétique. Résultat : les déchets, dont une protéine toxique appelée alpha-synucléine, s'accumulent et forment des amas qui endommagent les neurones producteurs de dopamine, responsables du mouvement.",
+    "mechanism": "Les variants de TMEM175 réduisent l'acidification lysosomale (via un défaut de flux de protons), ce qui inhibe l'activité des hydrolases acides (comme la cathepsine D) et perturbe la dégradation autophagique. L'accumulation de substrats non dégradés active la réponse au stress lysosomal (UPRmt), induisant une dysfonction mitochondriale (diminution de l'ATP) et une augmentation de la production de ROS, favorisant l'agrégation de l'alpha-synucléine. Par ailleurs, l'acidification lysosomale anormale pourrait perturber le recyclage de l'alpha-synucléine via la voie CMA (chaperone-mediated autophagy), aggravant son accumulation.",
+    "novelty": 0.85,
+    "confidence": 0.8,
+    "validation_score": 0.8,
+    "actionable": "Tester l'effet de modulateurs pharmacologiques de TMEM175 (agonistes\/antagonistes identifiés via ChEMBL) sur la dégradation de l'alpha-synucléine et la fonction lysosomale dans des modèles cellulaires de neurones dopaminergiques dérivés de patients porteurs de variants TMEM175 (iPSC).",
+    "therapeutic_target": "TMEM175 (canal protonique lysosomal) ou ses partenaires fonctionnels (ex : SLC7A11 pour le transport de protons alternatif)",
+    "evidence_strength": "moderate",
+    "research_gaps": "1) Absence d'études directes liant les variants rares de TMEM175 à l'autophagie défectueuse dans les neurones dopaminergiques. 2) Manque de données sur l'impact des variants TMEM175 sur la voie CMA. 3) Peu d'informations sur l'interaction entre acidification lysosomale anormale et stress mitochondrial dans le contexte de Parkinson.",
+    "keywords": [
+        "TMEM175",
+        "autophagie lysosomale",
+        "alpha-synucléine",
+        "variants rares Parkinson",
+        "dysfonction mitochondriale",
+        "stress lysosomal",
+        "neurones dopaminergiques",
+        "canal protonique",
+        "UPRmt",
+        "CMA"
+    ],
+    "sources": [
+        "PubMed",
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 3,
+    "status": "ARCHIVEE",
+    "timestamp": 1774832185,
+    "saved_at": 1774832185,
+    "version": "9.1-neuron-fixed",
+    "session": "26f2eef19d895b3b",
+    "data_snapshot": {
+        "0": {
+            "source": "PubMed",
+            "count": 4
+        },
+        "5": {
+            "source": "OpenAlex",
+            "count": 96
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 4698
+        }
+    }
+}

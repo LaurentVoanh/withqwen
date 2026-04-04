@@ -1,0 +1,43 @@
+{
+    "id": "H-20260330011934-834606c4",
+    "target": "Protéine ZDHHC17 (Zinc Finger DHHC-Type Palmitoyltransferase 17)",
+    "domain": "Génétique rare \/ Palmitoylation et maladies neurodégénératives",
+    "title": "La palmitoylation médiée par ZDHHC17 pourrait réguler l'expression et la fonction du canal ionique TRPV4 via la modification post-traductionnelle de motifs minimaux spécifiques (ex: sites de palmitoylation Cys-X-X-Cys) dans des domaines cytosoliques de TRPV4, altérant ainsi la signalisation calcique et contribuant à la pathogenèse des neuropathies héréditaires rares comme les maladies de Charcot-Marie-Tooth ou les neuropathies sensitives congénitales.",
+    "hypothesis": "La palmitoylation médiée par ZDHHC17 pourrait réguler l'expression et la fonction du canal ionique TRPV4 via la modification post-traductionnelle de motifs minimaux spécifiques (ex: sites de palmitoylation Cys-X-X-Cys) dans des domaines cytosoliques de TRPV4, altérant ainsi la signalisation calcique et contribuant à la pathogenèse des neuropathies héréditaires rares comme les maladies de Charcot-Marie-Tooth ou les neuropathies sensitives congénitales.",
+    "vulgarized": "Imagine que ton corps a des 'interrupteurs moléculaires' qui contrôlent le flux de calcium dans tes nerfs. ZDHHC17 est comme un chef d'orchestre qui allume ou éteint ces interrupteurs en ajoutant des petites étiquettes graisseuses (palmitoylation). Si ce chef ne fonctionne pas bien, les nerfs ne reçoivent plus les bons signaux, ce qui peut causer des douleurs ou des faiblesses. En bloquant ou en activant ZDHHC17, on pourrait peut-être corriger ces problèmes.",
+    "mechanism": "ZDHHC17, une palmitoyltransférase à domaine DHHC, pourrait cibler des motifs minimaux de type Cys-X-X-Cys (où X est un acide aminé variable) présents dans les boucles cytosoliques de TRPV4, conduisant à une palmitoylation dynamique de résidus cystéines spécifiques. Cette modification pourrait : (1) stabiliser TRPV4 à la membrane plasmique en favorisant son ancrage lipidique, (2) moduler son interaction avec des protéines régulatrices (ex: PIP2, calmoduline), ou (3) altérer sa phosphorylation via des kinases dépendantes de l'état palmitoylé. Un déséquilibre dans ce processus pourrait entraîner une signalisation calcique excessive ou insuffisante, caractéristique des neuropathies.",
+    "novelty": 0.85,
+    "confidence": 0.7,
+    "validation_score": 0.7,
+    "actionable": "Concevoir des peptides mimétiques bloquant les sites de palmitoylation de TRPV4 identifiés par analyse bioinformatique des motifs Cys-X-X-Cys dans les boucles cytosoliques, puis tester leur effet sur la localisation membranaire et l'activité du canal TRPV4 dans des neurones dérivés de cellules souches pluripotentes de patients atteints de neuropathies héréditaires rares.",
+    "therapeutic_target": "TRPV4 (canal ionique) et ZDHHC17 (palmitoyltransférase), avec un focus sur les motifs minimaux Cys-X-X-Cys de TRPV4 comme cible pour des inhibiteurs ou activateurs spécifiques.",
+    "evidence_strength": "moderate",
+    "research_gaps": "Aucune étude n'a directement démontré l'interaction physique entre ZDHHC17 et TRPV4, ni l'impact fonctionnel de cette palmitoylation sur la signalisation calcique dans les neuropathies. Les motifs minimaux Cys-X-X-Cys de TRPV4 n'ont pas été cartographiés pour la palmitoylation, et les outils bioinformatiques actuels (ex: CSS-Palm, GPS-Palm) n'ont pas été validés pour prédire ces sites avec précision dans les canaux ioniques.",
+    "keywords": [
+        "ZDHHC17",
+        "TRPV4",
+        "palmitoylation",
+        "neuropathies héréditaires",
+        "motifs minimaux Cys-X-X-Cys"
+    ],
+    "sources": [
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 2,
+    "status": "ARCHIVEE",
+    "timestamp": 1774833574,
+    "saved_at": 1774833574,
+    "version": "9.1-neuron-fixed",
+    "session": "26f2eef19d895b3b",
+    "data_snapshot": {
+        "5": {
+            "source": "OpenAlex",
+            "count": 6
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 9258
+        }
+    }
+}

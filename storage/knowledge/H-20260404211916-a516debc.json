@@ -1,0 +1,46 @@
+{
+    "id": "H-20260404211916-a516debc",
+    "target": "Protéine SEMA3A (Semaphorin-3A) dans le syndrome de Kallmann",
+    "domain": "Endocrinologie \/ Neuroendocrinologie",
+    "title": "Une régulation épigénétique médiée par les HDAC (histone désacétylases) ou les DNMT (ADN méthyltransférases) pourrait moduler l'expression de SEMA3A dans les neurones à GnRH, contribuant ainsi à la pathogenèse du syndrome de Kallmann via une altération de la migration neuronale et de la sécrétion pulsatile de GnRH.",
+    "hypothesis": "Une régulation épigénétique médiée par les HDAC (histone désacétylases) ou les DNMT (ADN méthyltransférases) pourrait moduler l'expression de SEMA3A dans les neurones à GnRH, contribuant ainsi à la pathogenèse du syndrome de Kallmann via une altération de la migration neuronale et de la sécrétion pulsatile de GnRH.",
+    "vulgarized": "Dans le syndrome de Kallmann, une maladie rare qui cause une infertilité et un retard pubertaire, une protéine appelée SEMA3A pourrait être mal régulée par des mécanismes épigénétiques (comme des 'étiquettes' chimiques sur l'ADN ou les protéines). Cela perturberait le développement des neurones producteurs d'une hormone clé pour la puberté, la GnRH.",
+    "mechanism": "Les HDAC (ex. HDAC1\/2) ou DNMT (ex. DNMT1) pourraient hyperméthyler ou désacétyler des promoteurs de gènes associés à SEMA3A (ex. SEMA3A, NRP1, PLXNA3), réduisant leur expression. Cela altérerait la signalisation axonale des neurones à GnRH, bloquant leur migration vers l'hypothalamus et perturbant la sécrétion pulsatile de GnRH. Une boucle de rétroaction épigénétique (ex. via SIRT1) pourrait amplifier ce dysfonctionnement.",
+    "novelty": 0.85,
+    "confidence": 0.7,
+    "validation_score": 0.7,
+    "actionable": "Tester l'effet d'inhibiteurs de HDAC (ex. Vorinostat) ou de DNMT (ex. 5-azacytidine) sur l'expression de SEMA3A et la migration des neurones à GnRH dans des modèles murins de syndrome de Kallmann (ex. souris *Sema3a-\/-* ou *Kallmann-associated gene KO*). Mesurer la sécrétion de GnRH par ELISA.",
+    "therapeutic_target": "Complexe HDAC1\/2-DNMT1-SIRT1 ou le promoteur de SEMA3A",
+    "evidence_strength": "moderate",
+    "research_gaps": "Aucune étude n'a exploré le rôle direct des HDAC\/DNMT sur SEMA3A dans le syndrome de Kallmann. Les données sur l'épigénétique de SEMA3A se limitent à des modèles cancéreux ou neuronaux non endocriniens. Les biomarqueurs sériques de SEMA3A dans le syndrome de Kallmann restent non caractérisés.",
+    "keywords": [
+        "SEMA3A",
+        "épigénétique",
+        "HDAC",
+        "DNMT",
+        "syndrome de Kallmann",
+        "neurones à GnRH",
+        "migration neuronale",
+        "biomarqueurs sériques"
+    ],
+    "sources": [
+        "OpenAlex",
+        "ChEMBL"
+    ],
+    "sources_count": 2,
+    "status": "ARCHIVEE",
+    "timestamp": 1775337556,
+    "saved_at": 1775337556,
+    "version": "9.1-neuron-fixed",
+    "session": "522ca80f086b9d40",
+    "data_snapshot": {
+        "5": {
+            "source": "OpenAlex",
+            "count": 74
+        },
+        "6": {
+            "source": "ChEMBL",
+            "count": 9404
+        }
+    }
+}
