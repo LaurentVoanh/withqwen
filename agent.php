@@ -42,6 +42,186 @@ if(file_exists(__DIR__ . '/config.php')) {
     $MISTRAL_KEY_INDEX = 0;
     // --- Fonctions inline minimales si config.php absent ---
     // ════════════════════════════════════════════════════════════════════════
+    // 🧠 AUTO-LEARNING & AUTO-AUDIT - Amélioration continue du code
+    // ════════════════════════════════════════════════════════════════════════
+    function genesis_learn($feedback_type, $data) {
+        // Enregistre les feedbacks pour amélioration future
+        $log_file = STORAGE_PATH . 'ai_learning/feedback.jsonl';
+        $entry = [
+            'timestamp' => time(),
+            'type' => $feedback_type,
+            'data' => $data
+        ];
+        @file_put_contents($log_file, json_encode($entry, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND);
+    }
+    
+    function genesis_analyze_performance() {
+        // Analyse les performances passées pour optimiser les futurs appels
+        $log_file = STORAGE_PATH . 'ai_learning/feedback.jsonl';
+        if(!file_exists($log_file)) return ['success_rate' => 0.5, 'avg_response_time' => 0, 'best_practices' => []];
+        
+        $lines = @file($log_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        if(empty($lines)) return ['success_rate' => 0.5, 'avg_response_time' => 0, 'best_practices' => []];
+        
+        $successes = 0; $failures = 0; $response_times = [];
+        $endpoint_stats = [];
+        
+        foreach(array_slice($lines, -500) as $line) {  // Derniers 500 entries
+            $entry = @json_decode($line, true);
+            if(!$entry) continue;
+            
+            if($entry['type'] === 'api_call') {
+                if($entry['data']['success']) $successes++; else $failures++;
+                if(isset($entry['data']['response_time'])) $response_times[] = $entry['data']['response_time'];
+                
+                $endpoint = $entry['data']['endpoint'] ?? 'unknown';
+                if(!isset($endpoint_stats[$endpoint])) $endpoint_stats[$endpoint] = ['success' => 0, 'fail' => 0, 'times' => []];
+                if($entry['data']['success']) $endpoint_stats[$endpoint]['success']++;
+                else $endpoint_stats[$endpoint]['fail']++;
+                if(isset($entry['data']['response_time'])) $endpoint_stats[$endpoint]['times'][] = $entry['data']['response_time'];
+            }
+        }
+        
+        $total = $successes + $failures;
+        $success_rate = $total > 0 ? $successes / $total : 0.5;
+        $avg_time = !empty($response_times) ? array_sum($response_times) / count($response_times) : 0;
+        
+        // Identifier les meilleures pratiques
+        $best_practices = [];
+        foreach($endpoint_stats as $endpoint => $stats) {
+            $ep_success = $stats['success'] + $stats['fail'];
+            if($ep_success >= 5) {
+                $ep_rate = $stats['success'] / $ep_success;
+                if($ep_rate > 0.8) $best_practices[] = "$endpoint:high_success";
+                elseif($ep_rate < 0.4) $best_practices[] = "$endpoint:needs_retry";
+            }
+        }
+        
+        return [
+            'success_rate' => round($success_rate, 3),
+            'avg_response_time' => round($avg_time, 2),
+            'best_practices' => $best_practices,
+            'endpoint_stats' => $endpoint_stats
+        ];
+    }
+    
+    function genesis_optimize_query($query, $endpoint) {
+        // Optimise la requête selon l'endpoint (mots-clés spéciaux, syntaxe)
+        $original = $query;
+        
+        // Nettoyage de base
+        $query = preg_replace('/[\\"\'\\*\\?]/', '', $query);  // Remove problematic chars
+        
+        // Optimisations spécifiques par endpoint
+        switch($endpoint) {
+            case 'arxiv':
+                // ArXiv préfère les termes techniques sans stopwords
+                $query = preg_replace('/\\b(the|a|an|of|in|on|for|with|study|studies|role|discovery|analysis)\\b/i', '', $query);
+                $query = preg_replace('/\\s+/', ' ', trim($query));
+                // Ajouter AND pour multi-termes
+                if(strpos($query, ' ') !== false && strlen($query) > 20) {
+                    $parts = explode(' ', $query);
+                    if(count($parts) <= 4) $query = implode(' AND ', $parts);
+                }
+                break;
+                
+            case 'pubmed':
+                // PubMed supporte MeSH et operators booléens
+                $query = preg_replace('/\\b(study|studies|recent|new|novel)\\b/i', '', $query);
+                // Ajouter [Title/Abstract] pour recherche ciblée
+                if(strlen($query) > 5 && strlen($query) < 50) {
+                    $query = '(' . $query . '[Title/Abstract])';
+                }
+                break;
+                
+            case 'uniprot':
+                // UniProt nécessite des noms de gènes propres
+                $query = preg_replace('/[^A-Za-z0-9\\-_]/', ' ', $query);
+                $query = preg_replace('/\\s+/', ' ', trim($query));
+                $words = array_filter(explode(' ', $query), fn($w) => strlen($w) >= 2);
+                $query = implode(' AND ', array_map(fn($w) => "gene_name:$w", $words));
+                break;
+                
+            case 'openalex':
+                // OpenAlex préfère les phrases naturelles mais sans stopwords longs
+                $query = preg_replace('/\\b(comprehensive|systematic|review|meta-analysis)\\b/i', '', $query);
+                $query = trim(preg_replace('/\\s+/', ' ', $query));
+                break;
+                
+            case 'chembl':
+                // ChEMBL cible les protéines et targets
+                $query = preg_replace('/\\b(protein|target|receptor|enzyme|inhibitor)\\b/i', '', $query);
+                $query = trim(preg_replace('/\\s+/', ' ', $query));
+                break;
+                
+            case 'europepmc':
+                // EuropePMC supporte la syntaxe avancée
+                $query = preg_replace('/\\b(full\\s+text|open\\s+access)\\b/i', '', $query);
+                $query = trim(preg_replace('/\\s+/', ' ', $query));
+                break;
+        }
+        
+        // Si la query est trop courte après nettoyage, utiliser l'originale
+        if(strlen(trim($query)) < 3) $query = $original;
+        
+        // Logger l'optimisation pour apprentissage
+        if($query !== $original) {
+            genesis_learn('query_optimization', [
+                'original' => $original,
+                'optimized' => $query,
+                'endpoint' => $endpoint
+            ]);
+        }
+        
+        return $query;
+    }
+    
+    function genesis_self_audit() {
+        // Auto-audit du système pour détecter problèmes et suggérer améliorations
+        $audit = [
+            'timestamp' => time(),
+            'issues' => [],
+            'recommendations' => [],
+            'performance_score' => 100
+        ];
+        
+        // Vérifier espace disque
+        $free_space = disk_free_space(STORAGE_PATH);
+        if($free_space < 100 * 1024 * 1024) {  // < 100MB
+            $audit['issues'][] = 'Espace disque faible (< 100MB)';
+            $audit['recommendations'][] = 'Nettoyer les vieux logs et cache';
+            $audit['performance_score'] -= 20;
+        }
+        
+        // Analyser performance API
+        $perf = genesis_analyze_performance();
+        if($perf['success_rate'] < 0.6) {
+            $audit['issues'][] = 'Taux de succès API faible (' . round($perf['success_rate']*100) . '%)';
+            $audit['recommendations'][] = 'Augmenter timeouts ou ajouter retry logic';
+            $audit['performance_score'] -= 15;
+        }
+        
+        // Vérifier endpoints problématiques
+        foreach($perf['endpoint_stats'] ?? [] as $endpoint => $stats) {
+            $total = $stats['success'] + $stats['fail'];
+            if($total >= 10) {
+                $rate = $stats['success'] / $total;
+                if($rate < 0.5) {
+                    $audit['issues'][] = "Endpoint $endpoint défaillant (" . round($rate*100) . '%)';
+                    $audit['recommendations'][] = "Vérifier syntaxe requêtes pour $endpoint";
+                    $audit['performance_score'] -= 10;
+                }
+            }
+        }
+        
+        // Sauvegarder audit
+        @file_put_contents(STORAGE_PATH . 'ai_learning/last_audit.json', 
+            json_encode($audit, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+        
+        return $audit;
+    }
+
+    // ════════════════════════════════════════════════════════════════════════
     // 🔥 CURLE MULTI - REQUÊTES PARALLÈLES POUR DÉCOUVERTE RAPIDE
     // ════════════════════════════════════════════════════════════════════════
     function genesis_curl_multi($urls, $timeout = 40, $max_retries = 2) {
@@ -199,12 +379,15 @@ if(file_exists(__DIR__ . '/config.php')) {
         }
         return ['success'=>true,'data'=>$parsed,'raw'=>$content,'model_used'=>$model,'tokens_used'=>$json['usage']['total_tokens']??0];
     }
-    // 8 sources corrigées (Semantic Scholar retiré)
+    // 8 sources optimisées avec requêtes intelligentes et logging performance
     function genesis_pubmed($query,$max=5){
         if(empty($query)) return ['count'=>0,'items'=>[],'source'=>'PubMed','abstracts'=>'','error'=>'Empty query'];
-        $query = preg_replace('/["\']/', '', $query); // Nettoyage
+        $original_query = $query;
+        $query = genesis_optimize_query($query, 'pubmed');  // 🧠 Optimisation auto
         $url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=" . urlencode($query) . "&retmode=json&retmax=$max&sort=relevance";
         $r = genesis_curl($url,null,[],35);
+        // Logger performance pour apprentissage
+        genesis_learn('api_call', ['endpoint'=>'pubmed','success'=>$r['success'],'response_time'=>$r['response_time_ms']??0]);
         if(!$r['success']) return ['count'=>0,'items'=>[],'source'=>'PubMed','abstracts'=>'','error'=>$r['error']];
         $d = @json_decode($r['data'],true);
         $ids = $d['esearchresult']['idlist']??[];
@@ -217,7 +400,7 @@ if(file_exists(__DIR__ . '/config.php')) {
             $items[] = ['pmid'=>$id,'title'=>substr($title,0,200),'journal'=>$info['fulljournalname']??'N/A','year'=>substr($info['pubdate']??'',0,4),'url'=>"https://pubmed.ncbi.nlm.nih.gov/$id/"];
             $abstracts[] = substr($title,0,ABSTRACT_MAX_CHARS);
         }
-        return ['count'=>count($ids),'items'=>$items,'source'=>'PubMed','abstracts'=>implode("\n---\n",array_filter($abstracts))];
+        return ['count'=>count($ids),'items'=>$items,'source'=>'PubMed','abstracts'=>implode("\n---\n",array_filter($abstracts)),'query_optimized'=>$query!==$original_query];
     }
     function genesis_uniprot($query,$max=5){
         if(empty($query)) return ['count'=>0,'items'=>[],'source'=>'UniProt','abstracts'=>'','error'=>'Empty query'];
@@ -1083,11 +1266,38 @@ if($action === 'status') {
     ]);
 }
 // ============================================================================
+// ██ ACTION: self_audit (NOUVEAU - Auto-analyse intelligente)
+// ============================================================================
+if($action === 'self_audit') {
+    $audit = genesis_self_audit();
+    $perf = genesis_analyze_performance();
+    genesis_json_out([
+        'audit' => $audit,
+        'performance' => $perf,
+        'recommendations' => $audit['recommendations'] ?? [],
+        'learning_enabled' => true,
+        'version' => GENESIS_VERSION
+    ]);
+}
+// ============================================================================
+// ██ ACTION: get_learning_data (NOUVEAU - Récupère données d'apprentissage)
+// ============================================================================
+if($action === 'get_learning_data') {
+    $log_file = STORAGE_PATH . 'ai_learning/feedback.jsonl';
+    $lines = file_exists($log_file) ? @file($log_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) : [];
+    $entries = array_map(fn($l) => @json_decode($l, true), array_slice($lines, -100));  // Derniers 100
+    genesis_json_out([
+        'entries_count' => count($entries),
+        'recent_entries' => array_filter($entries),
+        'version' => GENESIS_VERSION
+    ]);
+}
+// ============================================================================
 // ██ FALLBACK
 // ============================================================================
 genesis_json_out([
     'error'   => "Action inconnue: $action",
-    'actions' => ['init','poll','observe','load_hypotheses','get_hypothesis','generate_article','deep_research','stats','search','export','delete','pause','resume','status'],
+    'actions' => ['init','poll','observe','load_hypotheses','get_hypothesis','generate_article','deep_research','stats','search','export','delete','pause','resume','status','self_audit','get_learning_data'],
     'version' => GENESIS_VERSION,
 ]);
 ?>
