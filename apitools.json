@@ -1,0 +1,116 @@
+{
+  "medical_research_toolbox": {
+    "description": "Base de connaissances des APIs et flux biomédicaux validés pour l'analyse scientifique et le calcul médical.",
+    "version": "2.0",
+    "sources": [
+      {
+        "name": "PubMed (NCBI)",
+        "url_template": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmode=json&retmax=8&sort=relevance&term={TERM}",
+        "description": "Principale base de données mondiale de littérature biomédicale.",
+        "input_type": "Keywords, MeSH Terms, Author, DOI",
+        "example_inputs": ["immunotherapy resistance", "cardiac arrhythmia", "10.1038/s41586-020-2012-7"],
+        "scientific_utility": "Identification de corrélations cliniques, revue de littérature, extraction de preuves basées sur l'évidence (EBM).",
+        "synergy": {
+          "couple_with": ["Unpaywall", "PubChem"],
+          "outcome": "Permet de passer d'une recherche bibliographique à l'accès au texte intégral (Unpaywall) ou d'identifier les structures chimiques mentionnées (PubChem)."
+        }
+      },
+      {
+        "name": "ClinicalTrials.gov",
+        "url_template": "https://clinicaltrials.gov/api/v2/studies?pageSize=5&query.cond={TERM}",
+        "description": "Registre des essais cliniques mondiaux (en cours et terminés).",
+        "input_type": "Condition, Drug name, Intervention",
+        "example_inputs": ["Type 2 Diabetes", "Pembrolizumab", "Heart Failure"],
+        "scientific_utility": "Évaluation du pipeline de nouveaux médicaments, analyse de la phase des essais et des critères d'inclusion.",
+        "synergy": {
+          "couple_with": ["OpenFDA", "PubMed"],
+          "outcome": "Comparer les résultats d'essais cliniques (ClinicalTrials) avec les effets indésirables déclarés post-marché (OpenFDA)."
+        }
+      },
+      {
+        "name": "UniProt",
+        "url_template": "https://rest.uniprot.org/uniprotkb/search?format=json&size=5&query={TERM}+AND+reviewed:true",
+        "description": "Base de données complète sur les fonctions et séquences de protéines.",
+        "input_type": "Gene Name, Protein Symbol, Accession Number",
+        "example_inputs": ["ACE2", "P04637", "Insulin"],
+        "scientific_utility": "Analyse moléculaire, identification de domaines fonctionnels et de sites de liaison.",
+        "synergy": {
+          "couple_with": ["Ensembl", "StringDB"],
+          "outcome": "Lier la séquence protéique (UniProt) à sa localisation génomique (Ensembl) et à son réseau d'interaction protéique (StringDB)."
+        }
+      },
+      {
+        "name": "OpenFDA",
+        "url_template": "https://api.fda.gov/drug/label.json?limit=5&search=indications_and_usage:{TERM}",
+        "description": "Données officielles de la FDA sur les médicaments (étiquettes, effets secondaires).",
+        "input_type": "Drug name, Medical indication",
+        "example_inputs": ["Metformin", "Hypertension", "Atorvastatin"],
+        "scientific_utility": "Pharmacovigilance et vérification des indications thérapeutiques approuvées.",
+        "synergy": {
+          "couple_with": ["RxNorm", "ChEMBL"],
+          "outcome": "Standardiser le nom du médicament (RxNorm) puis analyser sa bioactivité chimique (ChEMBL) par rapport à ses effets cliniques (OpenFDA)."
+        }
+      },
+      {
+        "name": "StringDB",
+        "url_template": "https://string-db.org/api/json/network?species=9606&required_score=700&identifiers={TERM}",
+        "description": "Réseau d'interactions protéines-protéines.",
+        "input_type": "Gene Symbol (HUGO)",
+        "example_inputs": ["TP53", "MYH7", "EGFR"],
+        "scientific_utility": "Calcul de centralité de réseau pour identifier des cibles thérapeutiques potentielles.",
+        "synergy": {
+          "couple_with": ["DisGeNET", "KEGG"],
+          "outcome": "Visualiser si un groupe de protéines interagissant ensemble (StringDB) est spécifiquement lié à une pathologie (DisGeNET)."
+        }
+      },
+      {
+        "name": "DisGeNET",
+        "url_template": "https://www.disgenet.org/api/gda/disease/{TERM}?limit=5",
+        "description": "Associations gènes-maladies.",
+        "input_type": "Disease name (English)",
+        "example_inputs": ["alzheimer", "cardiomyopathy", "asthma"],
+        "scientific_utility": "Recherche génomique translationnelle (lier le génotype au phénotype).",
+        "synergy": {
+          "couple_with": ["NCBI_Gene", "ClinicalTrials"],
+          "outcome": "Partir d'une maladie pour identifier les gènes cibles (DisGeNET) et voir s'il existe des essais cliniques ciblant ces gènes (ClinicalTrials)."
+        }
+      },
+      {
+        "name": "ChEMBL",
+        "url_template": "https://www.ebi.ac.uk/chembl/api/data/molecule.json?pref_name__icontains={TERM}&limit=5",
+        "description": "Base de données de bioactivité des molécules de type médicament.",
+        "input_type": "Chemical name, Molecule name",
+        "example_inputs": ["Imatinib", "Sildenafil", "Ritonavir"],
+        "scientific_utility": "Calcul de drug-design, affinité de liaison, et prédiction de toxicité chimique.",
+        "synergy": {
+          "couple_with": ["PubChem", "UniProt"],
+          "outcome": "Comparer la structure chimique (PubChem) avec les données de liaison sur des cibles protéiques spécifiques (UniProt)."
+        }
+      },
+      {
+        "name": "Unpaywall",
+        "url_template": "https://api.unpaywall.org/v2/{TERM}?email=research@genesis.bio",
+        "description": "Moteur d'accès légal aux versions PDF gratuites des articles scientifiques.",
+        "input_type": "DOI",
+        "example_inputs": ["10.1038/nature12373", "10.1126/science.abb8021"],
+        "scientific_utility": "Extraction de données plein texte (Full-text mining) pour l'analyse de données sans barrière payante.",
+        "synergy": {
+          "couple_with": ["PubMed", "CrossRef"],
+          "outcome": "Automatiser la récupération du contenu complet après une recherche bibliographique."
+        }
+      },
+      {
+        "name": "ArXiv q-bio",
+        "url_template": "https://export.arxiv.org/rss/q-bio",
+        "description": "Flux de prépublications en biologie quantitative.",
+        "input_type": "RSS Feed (No parameters needed)",
+        "example_inputs": ["N/A"],
+        "scientific_utility": "Détection précoce de nouvelles méthodes algorithmiques ou modèles mathématiques en biologie.",
+        "synergy": {
+          "couple_with": ["HuggingFace", "PapersWithCode"],
+          "outcome": "Appliquer des modèles d'IA récents (HuggingFace) aux théories biologiques publiées le jour même sur ArXiv."
+        }
+      }
+    ]
+  }
+}
