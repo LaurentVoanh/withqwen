@@ -1,4 +1,0 @@
-[04-Apr-2026 22:06:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "DB_HOST" in /home/u170902479/domains/bigbang.voanh.art/public_html/read.php:15
-Stack trace:
-#0 {main}
-  thrown in /home/u170902479/domains/bigbang.voanh.art/public_html/read.php on line 15
